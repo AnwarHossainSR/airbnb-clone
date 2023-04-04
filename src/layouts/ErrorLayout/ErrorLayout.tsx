@@ -13,7 +13,7 @@ const Wrapper = styled.main`
   gap: 1rem;
 
   a {
-    color: var(--text-color);
+    color: 'red';
   }
 `;
 

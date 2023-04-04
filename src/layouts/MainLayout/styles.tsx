@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { theme } from '@/styles';
-
 export const Wrapper = styled.div`
   height: 100%;
   display: flex;
@@ -15,7 +13,7 @@ export const Content = styled.main`
 `;
 
 export const Header = styled.header`
-  background-color: ${theme.colors.gray[900]};
+  background-color: '#000';
   color: var(--color);
   padding: 2rem;
   display: flex;
@@ -23,7 +21,7 @@ export const Header = styled.header`
 `;
 
 export const Footer = styled.footer`
-  background-color: ${theme.colors.gray[900]};
+  background-color: '#000';
   color: var(--color);
   padding: 2rem;
   display: flex;
@@ -47,6 +45,6 @@ export const LinkButton = styled(Link)`
 
   &:focus,
   &:active {
-    outline: 1px solid ${theme.colors.gray[200]};
+    outline: 1px solid #fff;
   }
 `;
