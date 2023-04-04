@@ -113,9 +113,9 @@ const Categories = () => {
       <div
         className="
           pt-4
-          flex 
-          flex-row 
-          items-center 
+          flex
+          flex-row
+          items-center
           justify-between
           overflow-x-auto
         "
