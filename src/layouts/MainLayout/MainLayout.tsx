@@ -12,9 +12,6 @@ export function MainLayout({ children }: ChildrenProps) {
         <Link href="/">
           <span>Home</span>
         </Link>
-        <Link href="/login">
-          <span>Login</span>
-        </Link>
       </Header>
       <Content>{children}</Content>
       <MainFooter />
