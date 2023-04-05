@@ -1,10 +1,8 @@
 'use client';
 
-interface ContainerProps {
-  children: React.ReactNode;
-}
+import type { ChildrenProps } from '@/types';
 
-const Container: React.FC<ContainerProps> = ({ children }) => {
+const Container: React.FC<ChildrenProps> = ({ children }) => {
   return (
     <div
       className="
