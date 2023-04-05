@@ -9,7 +9,7 @@ interface NavbarProps {
   currentUser?: any;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
+export const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm">
       <div
@@ -39,5 +39,3 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
     </div>
   );
 };
-
-export default Navbar;

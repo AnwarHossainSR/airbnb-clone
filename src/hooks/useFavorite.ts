@@ -1,16 +1,17 @@
+/* eslint-disable import/no-cycle */
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 import { toast } from 'react-hot-toast';
 
-import useLoginModal from './useLoginModal';
+import { useLoginModal } from '@/hooks';
 
 interface IUseFavorite {
   listingId: string;
   currentUser?: any;
 }
 
-const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
+export const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
   const router = useRouter();
 
   const loginModal = useLoginModal();
@@ -53,5 +54,3 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
     toggleFavorite,
   };
 };
-
-export default useFavorite;
