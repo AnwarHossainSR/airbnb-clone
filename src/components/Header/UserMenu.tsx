@@ -6,7 +6,7 @@
 
 import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 
 import { useLoginModal, useRegisterModal, useRentModal } from '@/hooks';
@@ -21,7 +21,7 @@ interface UserMenuProps {
 
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const router = useRouter();
-
+  const userMenuRef = useRef<HTMLDivElement>(null);
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
   const rentModal = useRentModal();
@@ -39,6 +39,22 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 
     return rentModal.onOpen();
   }, [loginModal, rentModal, currentUser]);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        userMenuRef?.current &&
+        !userMenuRef?.current.contains(e.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [userMenuRef]);
 
   return (
     <div className="relative">
@@ -99,7 +115,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             text-sm
           "
         >
-          <div className="flex flex-col cursor-pointer">
+          <div className="flex flex-col cursor-pointer" ref={userMenuRef}>
             {currentUser ? (
               <>
                 <MenuItem

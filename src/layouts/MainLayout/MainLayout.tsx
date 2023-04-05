@@ -1,15 +1,18 @@
-import MainFooter from '@/components/Footer';
+import { ClientOnly } from '@/components';
 import { Navbar } from '@/components/Header';
+import LoginModal from '@/components/Modals/LoginModal';
+import RegisterModal from '@/components/Modals/RegisterModal';
 import type { ChildrenProps } from '@/types';
-
-import { Content, Wrapper } from './styles';
 
 export function MainLayout({ children }: ChildrenProps) {
   return (
-    <Wrapper>
-      <Navbar />
-      <Content>{children}</Content>
-      <MainFooter />
-    </Wrapper>
+    <>
+      <ClientOnly>
+        <Navbar />
+        <RegisterModal />
+        <LoginModal />
+      </ClientOnly>
+      <div className="pb-20 pt-28">{children}</div>
+    </>
   );
 }
