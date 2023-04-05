@@ -106,9 +106,9 @@ const RegisterModal = () => {
       />
       <div
         className="
-          text-neutral-500 
-          text-center 
-          mt-4 
+          text-neutral-500
+          text-center
+          mt-4
           font-light
         "
       >
@@ -118,7 +118,7 @@ const RegisterModal = () => {
             onClick={onToggle}
             className="
               text-neutral-800
-              cursor-pointer 
+              cursor-pointer
               hover:underline
             "
             aria-hidden="true"

@@ -112,7 +112,7 @@ const LoginModal = () => {
             onClick={onToggle}
             className="
               text-neutral-800
-              cursor-pointer 
+              cursor-pointer
               hover:underline
             "
           >
