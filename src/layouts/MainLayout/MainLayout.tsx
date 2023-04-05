@@ -1,5 +1,5 @@
 import MainFooter from '@/components/Footer';
-import Navbar from '@/components/Header/Navbar';
+import { Navbar } from '@/components/Header';
 import type { ChildrenProps } from '@/types';
 
 import { Content, Wrapper } from './styles';
