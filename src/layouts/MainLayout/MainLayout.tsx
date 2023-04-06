@@ -1,5 +1,8 @@
+import { Suspense } from 'react';
+
 import { ClientOnly } from '@/components';
 import { Navbar } from '@/components/Header';
+import Loader from '@/components/Loader';
 import LoginModal from '@/components/Modals/LoginModal';
 import RegisterModal from '@/components/Modals/RegisterModal';
 import ToasterProvider from '@/providers/ToasterProvider';
@@ -14,7 +17,9 @@ export function MainLayout({ children }: ChildrenProps) {
         <LoginModal />
         <ToasterProvider />
       </ClientOnly>
-      <div className="pb-20 pt-28">{children}</div>
+      <Suspense fallback={<Loader />}>
+        <div className="pb-20 pt-28">{children}</div>
+      </Suspense>
     </>
   );
 }
